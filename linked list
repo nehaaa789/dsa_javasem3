@@ -1,0 +1,51 @@
+class Node
+{
+    int data;
+    Node next;
+    Node(int data)
+    {
+        this.data= data;
+        this.next = null;
+    }
+}
+class Linkedlist
+{
+    Node head;
+    void add(int data)
+    {
+        if (head == null )
+        {
+            head = new Node (data);
+            return;
+        }
+        Node curr = head;
+        while(curr.next != null)
+        {
+            curr = curr.next;
+        }
+        curr.next = new Node (data);
+    }
+    void display()
+    {
+        Node j = head;
+        while (j!= null)
+        {
+            System.out.print(j.data + "->");
+            j = j.next;
+        }
+        System.out.print("null");
+    }
+}
+class T 
+{
+    public static void main (String [] arg)
+    {
+        Linkedlist list = new Linkedlist();
+        list.add(5);
+        list.add(75);
+        list.add(95);
+        list.add(87);
+        list.add(27);
+        list.display();
+    }
+}
